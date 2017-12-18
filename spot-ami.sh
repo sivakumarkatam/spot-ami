@@ -27,6 +27,14 @@ pip install awscli --upgrade
 #pip install awscli==1.14.11
 aws --version
 
+echo "codedeploy agent install"
+sudo apt-get install ruby
+wget https://	aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+sudo service codedeploy-agent start
+sudo service codedeploy-agent status
+
 echo "install packer"
 cd /home/ubuntu
 #rm -rf packer/
