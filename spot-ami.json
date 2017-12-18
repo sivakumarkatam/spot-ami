@@ -23,7 +23,6 @@
  
   "type": "shell",
   "inline": [
-    "reboot",
     "sleep 60",
     "aws --version",
     "cd /home/ubuntu/packer",
