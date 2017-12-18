@@ -7,7 +7,7 @@ sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%
 sudo tar -zxvf jre-8u*-linux-*.tar.gz
 sudo mv jre1.8.*/ /usr/java
 sudo update-alternatives --install /usr/bin/java java /usr/java/bin/java 2
-JAVA_HOME="/usr/java"
+export JAVA_HOME="/usr/java"
 source /etc/environment
 echo $JAVA_HOME
 echo "java version"
