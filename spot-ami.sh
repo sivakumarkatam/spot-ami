@@ -1,11 +1,14 @@
+#!/bin/bash
 sudo su
 sudo apt-get install -y python-pip
-sudo pip install --upgrade pip
-sudo pip install awscli --upgrade
-sudo pip install awscli==1.14.11
+pip install --upgrade pip
+pip install awscli --upgrade
+pip install awscli==1.14.11
 aws --version
 
 cd /home/ubuntu
+rm -rf packer/
+ls -l
 mkdir packer
 cd packer
 wget https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip
