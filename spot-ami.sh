@@ -35,9 +35,10 @@ echo "maven version"
 #mvn --version
 
 echo "aws cli starts"
-
-sudo apt-get install -y python-pip
-pip install --upgrade pip
+sudo apt-get update && sudo apt-get install -y python-pip
+sudo pip install --upgrade pip
+#sudo apt-get install -y python-pip
+#pip install --upgrade pip
 pip install awscli --upgrade
 #pip install awscli==1.14.11
 aws --version
