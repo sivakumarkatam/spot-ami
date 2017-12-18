@@ -56,7 +56,7 @@ sudo service codedeploy-agent status
 
 echo "install packer"
 cd /home/ubuntu
-#rm -rf packer/
+rm -rf packer/
 ls -l
 mkdir packer
 cd packer
