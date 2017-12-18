@@ -1,5 +1,9 @@
 #!/bin/bash
 sudo su
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
+echo "install starts"
 sudo apt-get install -y python-pip
 pip install --upgrade pip
 pip install awscli --upgrade
