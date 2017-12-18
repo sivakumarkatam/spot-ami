@@ -2,7 +2,7 @@
 "builders": [{
   "type": "amazon-ebs",
   "region": "ap-southeast-1",
-  "source_ami": "ami-0fb6fd6c",
+  "source_ami": "ami-67a6e604",
   "instance_type": "t2.micro",
   "vpc_id": "",
   "subnet_id": "",
@@ -19,15 +19,5 @@
   "execute_command": "echo '{{user `ssh_pass`}}' | {{ .Vars }} sudo -S -E sh '{{ .Path }}'",
   "script": "spot-ami.sh",
   "pause_before": "10s"
-},
-                {
- 
-  "type": "shell",
-  "execute_command": "echo '{{user `ssh_pass`}}' | {{ .Vars }} sudo -S -E sh '{{ .Path }}'",
-  "inline": [
-    "sleep 60",
-    "aws --version",
-    "cd /home/ubuntu/packer"
-    ]
 }]
 }
