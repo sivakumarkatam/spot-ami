@@ -16,12 +16,14 @@
 }],
 "provisioners": [{
   "type": "shell",
+  "execute_command": "echo '{{user `ssh_pass`}}' | {{ .Vars }} sudo -S -E sh '{{ .Path }}'",
   "script": "spot-ami.sh",
   "pause_before": "10s"
 },
                 {
  
   "type": "shell",
+  "execute_command": "echo '{{user `ssh_pass`}}' | {{ .Vars }} sudo -S -E sh '{{ .Path }}'",
   "inline": [
     "sleep 60",
     "aws --version",
