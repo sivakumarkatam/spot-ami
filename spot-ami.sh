@@ -3,11 +3,13 @@ apt-get install -y python-pip
 pip install --upgrade pip
 pip install awscli --upgrade
 pip install awscli==1.14.11
+aws --version
 
 cd /home/ubuntu
 mkdir packer
 cd packer
 wget https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip
+unzip packer_1.1.3_linux_amd64.zip
 echo 'export PATH=$PATH:~/packer/' >> ~/.bashrc
 #reboot
 
