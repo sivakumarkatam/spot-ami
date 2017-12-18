@@ -27,8 +27,7 @@
   "inline": [
     "sleep 60",
     "aws --version",
-    "cd /home/ubuntu/packer",
-    "packer --version"
-      ]
+    "cd /home/ubuntu/packer"
+    ]
 }]
 }
