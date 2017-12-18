@@ -34,38 +34,39 @@ sh ./mavenenv.sh
 echo "maven version"
 #mvn --version
 
+echo "aws cli starts"
 
-#sudo apt-get install -y python-pip
-#pip install --upgrade pip
-#pip install awscli --upgrade
+sudo apt-get install -y python-pip
+pip install --upgrade pip
+pip install awscli --upgrade
 #pip install awscli==1.14.11
-#aws --version
+aws --version
 
-#echo "codedeploy agent install"
-#sudo apt-get install ruby
-#wget https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/install
-#chmod +x ./install
-#sudo ./install auto
-#sudo service codedeploy-agent start
-#sudo service codedeploy-agent status
+echo "codedeploy agent install"
+sudo apt-get install ruby
+wget https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+sudo service codedeploy-agent start
+sudo service codedeploy-agent status
 
-#echo "install packer"
-#cd /home/ubuntu
+echo "install packer"
+cd /home/ubuntu
 #rm -rf packer/
-#ls -l
-#mkdir packer
-#cd packer
-#sudo wget https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip
-#sudo unzip packer_1.1.3_linux_amd64.zip
-#echo 'export PATH=$PATH:~/packer/' >> ~/.bashrc
+ls -l
+mkdir packer
+cd packer
+sudo wget https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip
+sudo unzip packer_1.1.3_linux_amd64.zip
+echo 'export PATH=$PATH:~/packer/' >> ~/.bashrc
 #reboot
 
 
 ##docker
-#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-#sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-#sudo apt-get update
-#sudo apt-get install -y docker-ce
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get install -y docker-ce
 
 #versions
 #docker version
