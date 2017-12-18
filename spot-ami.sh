@@ -1,5 +1,5 @@
 sudo su
-apt install -y python-pip
+apt-get install -y python-pip
 pip install --upgrade pip
 pip install awscli --upgrade
 pip install awscli==1.14.11
