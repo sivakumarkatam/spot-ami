@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo su
-sudo apt-get install -y tar
+sudo apt-get install -y tar ruby
 echo "install starts"
 echo "java install"
 sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jre-8u151-linux-x64.tar.gz"
@@ -28,8 +28,8 @@ pip install awscli --upgrade
 aws --version
 
 echo "codedeploy agent install"
-sudo apt-get install ruby
-wget https://	aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/install
+#sudo apt-get install ruby
+wget https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/install
 chmod +x ./install
 sudo ./install auto
 sudo service codedeploy-agent start
