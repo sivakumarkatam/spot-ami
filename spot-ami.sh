@@ -16,45 +16,49 @@ sudo mv apache-maven-3.3.9 maven
 echo '
 export M2_HOME=/opt/maven
 export PATH=${M2_HOME}/bin:${PATH}' >> /etc/profile.d/mavenenv.sh
+cat /etc/profile.d/mavenenv.sh
 sudo chmod +x /etc/profile.d/mavenenv.sh
+cd /etc/profile.d/
+ls
 source /etc/profile.d/mavenenv.sh
+sh ./mavenenv.sh
 mvn --version
 
 
-sudo apt-get install -y python-pip
-pip install --upgrade pip
-pip install awscli --upgrade
+#sudo apt-get install -y python-pip
+#pip install --upgrade pip
+#pip install awscli --upgrade
 #pip install awscli==1.14.11
-aws --version
+#aws --version
 
-echo "codedeploy agent install"
+#echo "codedeploy agent install"
 #sudo apt-get install ruby
-wget https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/install
-chmod +x ./install
-sudo ./install auto
-sudo service codedeploy-agent start
-sudo service codedeploy-agent status
+#wget https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/install
+#chmod +x ./install
+#sudo ./install auto
+#sudo service codedeploy-agent start
+#sudo service codedeploy-agent status
 
-echo "install packer"
-cd /home/ubuntu
+#echo "install packer"
+#cd /home/ubuntu
 #rm -rf packer/
-ls -l
-mkdir packer
-cd packer
-sudo wget https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip
-sudo unzip packer_1.1.3_linux_amd64.zip
-echo 'export PATH=$PATH:~/packer/' >> ~/.bashrc
+#ls -l
+#mkdir packer
+#cd packer
+#sudo wget https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip
+#sudo unzip packer_1.1.3_linux_amd64.zip
+#echo 'export PATH=$PATH:~/packer/' >> ~/.bashrc
 #reboot
 
 
 ##docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
-sudo apt-get install -y docker-ce
+#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+#sudo apt-get update
+#sudo apt-get install -y docker-ce
 
 #versions
-docker version
-aws --version
+#docker version
+#aws --version
 #cd /home/ubuntu/packer
 #packer --version
