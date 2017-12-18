@@ -1,22 +1,40 @@
 #!/bin/bash
 sudo su
-sudo rm /var/lib/apt/lists/lock
-sudo rm /var/cache/apt/archives/lock
-sudo rm /var/lib/dpkg/lock
+sudo apt-get install -y tar
 echo "install starts"
+echo "java install"
+sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jre-8u151-linux-x64.tar.gz"
+sudo tar -zxvf jre-8u*-linux-*.tar.gz
+sudo mv jre1.8.*/ /usr/java
+sudo update-alternatives --install /usr/bin/java java /usr/java/bin/java 2
+
+echo "Maven install"
+cd /opt/
+sudo wget http://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+sudo tar -xvzf apache-maven-3.3.9-bin.tar.gz
+sudo mv apache-maven-3.3.9 maven
+echo '
+export M2_HOME=/opt/maven
+export PATH=${M2_HOME}/bin:${PATH}' >> /etc/profile.d/mavenenv.sh
+sudo chmod +x /etc/profile.d/mavenenv.sh
+sudo source /etc/profile.d/mavenenv.sh
+mvn --version
+
+
 sudo apt-get install -y python-pip
 pip install --upgrade pip
 pip install awscli --upgrade
-pip install awscli==1.14.11
+#pip install awscli==1.14.11
 aws --version
 
+echo "install packer"
 cd /home/ubuntu
-rm -rf packer/
+#rm -rf packer/
 ls -l
 mkdir packer
 cd packer
-wget https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip
-unzip packer_1.1.3_linux_amd64.zip
+sudo wget https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip
+sudo unzip packer_1.1.3_linux_amd64.zip
 echo 'export PATH=$PATH:~/packer/' >> ~/.bashrc
 #reboot
 
