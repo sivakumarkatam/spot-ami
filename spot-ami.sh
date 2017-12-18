@@ -7,6 +7,8 @@ sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%
 sudo tar -zxvf jre-8u*-linux-*.tar.gz
 sudo mv jre1.8.*/ /usr/java
 sudo update-alternatives --install /usr/bin/java java /usr/java/bin/java 2
+echo "java version"
+java -version
 
 echo "Maven install"
 cd /opt/
