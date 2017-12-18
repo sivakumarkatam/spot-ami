@@ -2,7 +2,7 @@
 "builders": [{
   "type": "amazon-ebs",
   "region": "ap-southeast-1",
-  "source_ami": "ami-67a6e604",
+  "source_ami": "ami-0fb6fd6c",
   "instance_type": "t2.micro",
   "vpc_id": "",
   "subnet_id": "",
