@@ -1,8 +1,8 @@
 sudo su
-apt-get install -y python-pip
-pip install --upgrade pip
-pip install awscli --upgrade
-pip install awscli==1.14.11
+sudo apt-get install -y python-pip
+sudo pip install --upgrade pip
+sudo pip install awscli --upgrade
+sudo pip install awscli==1.14.11
 aws --version
 
 cd /home/ubuntu
