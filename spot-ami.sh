@@ -8,7 +8,7 @@ mkdir packer
 cd packer
 wget https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip
 echo 'export PATH=$PATH:~/packer/' >> ~/.bashrc
-reboot
+#reboot
 
 
 ##docker
@@ -20,5 +20,5 @@ sudo apt-get install -y docker-ce
 #versions
 docker version
 aws --version
-cd /home/ubuntu/packer
-packer --version
+#cd /home/ubuntu/packer
+#packer --version
