@@ -12,15 +12,24 @@ echo "Maven install"
 cd /opt/
 sudo wget http://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
 sudo tar -xvzf apache-maven-3.3.9-bin.tar.gz
+echo "unzip success"
 sudo mv apache-maven-3.3.9 maven
 echo 'export M2_HOME=/opt/maven
 export PATH=${M2_HOME}/bin:${PATH}' >> /etc/profile.d/mavenenv.sh
+echo "move file success"
+
 cat /etc/profile.d/mavenenv.sh
 sudo chmod +x /etc/profile.d/mavenenv.sh
+echo "changemod success"
 cd /etc/profile.d/
+echo "list of files"
 ls
+echo "executing source"
 source ./etc/profile.d/mavenenv.sh
+echo "executing sh maven"
 sh ./mavenenv.sh
+
+echo "maven version"
 mvn --version
 
 
