@@ -32,7 +32,7 @@ echo "executing sh maven"
 sh ./mavenenv.sh
 
 echo "maven version"
-mvn --version
+#mvn --version
 
 
 #sudo apt-get install -y python-pip
