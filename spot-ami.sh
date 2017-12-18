@@ -1,7 +1,8 @@
-sudo su -
+sudo su
 apt install -y python-pip
 pip install --upgrade pip
 pip install awscli --upgrade
+pip install awscli==1.14.11
 
 cd /home/ubuntu
 mkdir packer
