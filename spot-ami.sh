@@ -69,9 +69,12 @@ cat ~/.bashrc
 
 ##docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+echo "docker download completed"
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
+echo "added docker to repo"
+#sudo apt-get update
 sudo apt-get install -y docker-ce
+echo "docker install done"
 sudo usermod -a -G docker ubuntu
 ls -l /var/run/docker.sock
 sudo chmod 666 /var/run/docker.sock
