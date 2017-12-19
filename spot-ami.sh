@@ -37,6 +37,19 @@ sh ./mavenenv.sh
 echo "maven version"
 #mvn --version
 
+##docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+echo "docker download completed"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+echo "added docker to repo"
+sleep 1m
+sudo apt-get update
+sudo apt-get install -y docker-ce
+echo "docker install done"
+sudo usermod -a -G docker ubuntu
+ls -l /var/run/docker.sock
+sudo chmod 666 /var/run/docker.sock
+
 echo "aws cli starts"
 sudo apt-get update && sudo apt-get install -y python-pip
 sudo pip install --upgrade pip
@@ -45,18 +58,6 @@ sudo pip install --upgrade pip
 pip install awscli --upgrade
 #pip install awscli==1.14.11
 aws --version
-
-##docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-echo "docker download completed"
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-echo "added docker to repo"
-#sudo apt-get update
-sudo apt-get install -y docker-ce
-echo "docker install done"
-sudo usermod -a -G docker ubuntu
-ls -l /var/run/docker.sock
-sudo chmod 666 /var/run/docker.sock
 
 echo "codedeploy agent install"
 #sudo apt-get install ruby
