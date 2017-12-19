@@ -52,7 +52,7 @@ echo "codedeploy agent install"
 #chmod +x ./install
 #sudo ./install auto
 #sudo service codedeploy-agent start
-sudo service codedeploy-agent status
+#sudo service codedeploy-agent status
 
 echo "install packer"
 cd /home/ubuntu
@@ -71,6 +71,9 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
 sudo apt-get install -y docker-ce
+sudo usermod -a -G docker ubuntu
+ls -l /var/run/docker.sock
+sudo chmod 666 /var/run/docker.sock
 
 #versions
 #docker version
