@@ -46,6 +46,18 @@ pip install awscli --upgrade
 #pip install awscli==1.14.11
 aws --version
 
+##docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+echo "docker download completed"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+echo "added docker to repo"
+#sudo apt-get update
+sudo apt-get install -y docker-ce
+echo "docker install done"
+sudo usermod -a -G docker ubuntu
+ls -l /var/run/docker.sock
+sudo chmod 666 /var/run/docker.sock
+
 echo "codedeploy agent install"
 #sudo apt-get install ruby
 #wget https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/install
@@ -68,16 +80,16 @@ cat ~/.bashrc
 
 
 ##docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-echo "docker download completed"
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-echo "added docker to repo"
-#sudo apt-get update
-sudo apt-get install -y docker-ce
-echo "docker install done"
-sudo usermod -a -G docker ubuntu
-ls -l /var/run/docker.sock
-sudo chmod 666 /var/run/docker.sock
+#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#echo "docker download completed"
+#sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+#echo "added docker to repo"
+##sudo apt-get update
+#sudo apt-get install -y docker-ce
+#echo "docker install done"
+#sudo usermod -a -G docker ubuntu
+#ls -l /var/run/docker.sock
+#sudo chmod 666 /var/run/docker.sock
 
 #versions
 #docker version
