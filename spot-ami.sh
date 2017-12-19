@@ -62,7 +62,8 @@ mkdir packer
 cd packer
 sudo wget https://releases.hashicorp.com/packer/1.1.3/packer_1.1.3_linux_amd64.zip
 sudo unzip packer_1.1.3_linux_amd64.zip
-echo 'export PATH=$PATH:~/packer/' >> ~/.bashrc
+cat ~/.bashrc
+#echo 'export PATH=$PATH:~/packer/' >> ~/.bashrc
 #reboot
 
 
